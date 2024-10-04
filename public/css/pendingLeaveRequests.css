@@ -1,0 +1,22 @@
+
+button {
+    padding: 8px 12px;
+    margin-right: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+button[name="action"][value="approve"] {
+    background-color: #4CAF50; /* Green for Approve */
+   
+}
+
+button[name="action"][value="reject"] {
+    background-color: #f44336; /* Red for Reject */
+}
+
+button:hover {
+    opacity: 0.8; /* Slight opacity change on hover */
+}

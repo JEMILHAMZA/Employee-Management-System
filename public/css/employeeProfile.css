@@ -1,0 +1,59 @@
+/* custom.css */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+header h1 {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.employee-profile {
+    width: 80%;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.employee-profile h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.employee-profile p {
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.employee-profile img {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.logout-form {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logout-form button {
+    padding: 10px 20px;
+    background-color: #f00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.logout-form button:hover {
+    background-color: #c00;
+}
+
+
+.fullName{
+    text-align: center;
+}

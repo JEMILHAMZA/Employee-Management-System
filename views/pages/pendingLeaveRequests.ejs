@@ -1,0 +1,82 @@
+<!-- pages/pendingLeaveRequests.ejs -->
+ 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+   
+
+    <link rel="stylesheet" href="/css/profile.css">
+    
+    <link rel="stylesheet" href="/css/manageEmployees.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/pendingLeaveRequests.css"> 
+    
+    
+    
+</head>
+<body>
+
+
+
+
+ <!-- Include Header -->
+ <%- include('../partials/header') %>
+   
+    
+    
+ <div class="profile-container">
+     <%- include('../partials/adminSidebar.ejs') %>
+     <main>
+        <h2>Pending Leave Requests</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Employee Name</th>
+            <th>Employee Email</th>
+            <th>Leave Type</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Reason</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% leaveRequests.forEach(request => { %>
+            <tr>
+                <% if (request.employee) { %>
+                    <td><%= request.employee.fullName %></td>
+                <% } else { %>
+                    <td>Employee not found</td>
+                <% } %>
+                <% if (request.employee) { %>
+                    <td><%= request.employee.email %></td>
+                <% } else { %>
+                    <td>not found</td>
+                <% } %>
+                <td><%= request.leaveType %></td>
+                <td><%= request.startDate.toDateString() %></td>
+                <td><%= request.endDate.toDateString() %></td>
+                <td><%= request.reason %></td>
+                <td>
+                    <form action="/admin/leave-requests/update" method="POST">
+                        <input type="hidden" name="requestId" value="<%= request._id %>">
+                        <button type="submit" name="action" value="approve">Approve</button>
+                        <button type="submit" name="action" value="reject">Reject</button>
+                    </form>
+                </td>
+            </tr>
+        <% }); %>
+    </tbody>
+    
+</table>
+</main>
+</div>
+
+<!-- Include Footer -->
+<%- include('../partials/footer') %>
+</body>
+</html>

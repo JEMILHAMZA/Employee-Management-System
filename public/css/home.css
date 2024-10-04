@@ -1,0 +1,175 @@
+/* css/home.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+ 
+  .hero {
+    background-image: url('/images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh; /* adjust the height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+  /* Login Area Styles */
+  
+  .login-area {
+    background-color: #fff;
+    padding: 2em;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-area h2 {
+    margin-top: 0;
+  }
+  
+  .login-area form {
+    margin-top: 1em;
+  }
+
+
+
+
+
+/* Form Styles */
+  
+  form {
+    margin-top: 1em;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    height: 2.5em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  button[type="submit"] {
+    /* width: 100%; */
+    height: 2.5em;
+    /* background-color: #333; */
+    color: #fff;
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #444;
+  }
+
+
+
+  
+  .login-area label {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+  
+  .login-area input[type="email"],
+  .login-area input[type="password"] {
+    width: 100%;
+    height: 2em;
+    margin-bottom: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+  }
+  
+  .login-area button[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .login-area button[type="submit"]:hover {
+    background-color: #555;
+  }
+  
+  .login-area .error-message {
+    color: #f00;
+    margin-bottom: 1em;
+  }
+  
+  .login-area a {
+    color: #337ab7;
+    text-decoration: none;
+  }
+  
+  .login-area a:hover {
+    color: #23527c;
+  }
+
+
+
+
+
+
+
+  /* Header Styles */
+  header {
+    background-color: #4CAF50; /* Replace with your preferred color */
+    padding: 10px 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    border-radius: 50%;
+    width: 50px;  /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    margin-right: 15px;
+}
+
+
+header h1 {
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  font-size: 24px; /* Adjust size as needed */
+  margin: 0;
+  
+
+}
+
+
+
+/* Footer Styles */
+
+
+/* Apply flexbox to the body */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* Main content should take up available space */
+main {
+  flex: 1;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #333; /* Adjust the color as needed */
+  color: white;
+  padding: 10px;
+  text-align: center;
+  height: 40px;
+}

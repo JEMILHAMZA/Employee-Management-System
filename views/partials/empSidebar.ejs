@@ -1,0 +1,17 @@
+
+<aside class="sidebar">
+    <h3>Employee Actions</h3>
+    <li><a href="/employees/profile/me" class="button">Home</a></li>
+    <li><a href="/employees/leave-request" class="button">Leaving Request</a></li> 
+    <li><a href="/employees/profile" class="button">
+        <% if (employee.picture) { %>
+        <img src="<%= employee.picture %>" alt="Employee Picture" class="sidebar-profile-pic">
+        <% } else { %>
+        <div class="sidebar-default-avatar"><%= employee.fullName.charAt(0).toUpperCase() %></div>
+        <% } %>
+        Profile
+    </a></li>
+    
+    
+    <li><a href="/logout" class="button">Logout</a></li>
+</aside>

@@ -1,0 +1,138 @@
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee Management System</title>
+        
+        <link rel="stylesheet" href="/css/profile.css">
+       
+        <link rel="stylesheet" href="/css/dashboard.css">
+        <link rel="stylesheet" href="/css/editEmployee.css">
+        <link rel="stylesheet" href="/css/home.css">
+        
+        
+    </head>
+    <body>
+    
+       
+        <!-- Include Header -->
+        <%- include('../partials/header') %>
+        <div class="dashboard-container">
+            <!-- Sidebar -->
+            <%- include('../partials/adminSidebar.ejs') %>
+            
+            <!-- Main Content -->
+            <main class="wrapper">
+
+
+
+
+
+
+    <!-- <main> -->
+        <form action="/admin/edit-employee/<%= employee._id %>" method="POST" enctype="multipart/form-data">
+            <h2>Edit Employee</h2>
+            <label for="email">Email</label>
+            <input type="email" name="email" value="<%= employee.email %>" required>
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="Enter new password (leave blank to keep current)">
+            
+
+            <label for="fullName">Full Name</label>
+            <input type="text" name="fullName" value="<%= employee.fullName %>" required>
+            <label for="gender">Sex</label>
+            <select name="gender" required>
+                <option value="Male" <%= employee.gender === 'Male' ? 'selected' : '' %>>Male</option>
+                <option value="Female" <%= employee.gender === 'Female' ? 'selected' : '' %>>Female</option>
+                
+            </select>
+
+            <div class="form-group">
+                <label for="employeeID">Employee ID</label>
+                <input type="text" id="employeeID" name="employeeID" class="form-control" value="<%= employee.employeeID %>" readonly>
+            </div>
+            <div class="form-group">
+                <label for="role">Role</label>
+                <input type="text" id="role" name="role" class="form-control" value="<%= employee.role %>" readonly>
+            </div>
+
+            <label for="phoneNumber">Phone Number</label>
+            <input type="text" name="phoneNumber" value="<%= employee.phoneNumber %>" required>
+
+            <label for="jobTitle">Job Title</label>
+            <input type="text" name="jobTitle" value="<%= employee.jobTitle %>" required>
+
+            <label for="department">Department</label>
+            <input type="text" name="department" value="<%= employee.department %>" required>
+
+            <label for="supervisor">Supervisor/Manager</label>
+            <input type="text" name="supervisor" value="<%= employee.supervisor %>" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" name="dob" value="<%= employee.dob.toISOString().split('T')[0] %>" required>
+
+            <label for="address">Address</label>
+            <textarea name="address" required><%= employee.address %></textarea>
+
+            <label for="employmentType">Employment Type</label>
+            <select name="employmentType" required>
+                <option value="Full-time" <%= employee.employmentType === 'Full-time' ? 'selected' : '' %>>Full-time</option>
+                <option value="Part-time" <%= employee.employmentType === 'Part-time' ? 'selected' : '' %>>Part-time</option>
+                <option value="Contract" <%= employee.employmentType === 'Contract' ? 'selected' : '' %>>Contract</option>
+            </select>
+
+            <label for="salary">Salary</label>
+            <input type="number" name="salary" value="<%= employee.salary %>" required>
+
+            <label for="workLocation">Work Location</label>
+            <select name="workLocation" required>
+                <option value="Office" <%= employee.workLocation === 'Office' ? 'selected' : '' %>>Office</option>
+                <option value="Remote" <%= employee.workLocation === 'Remote' ? 'selected' : '' %>>Remote</option>
+            </select>
+
+            <label for="emergencyContact">Emergency Contact Details</label>
+            <textarea name="emergencyContact" required><%= employee.emergencyContact %></textarea>
+
+            <label for="joiningDate">Joining Date</label>
+            <input type="date" name="joiningDate" value="<%= employee.joiningDate.toISOString().split('T')[0] %>" required>
+
+            <label for="endDate">End Date (if applicable)</label>
+            <input type="date" name="endDate" value="<%= employee.endDate ? employee.endDate.toISOString().split('T')[0] : '' %>">
+
+            <label for="leaveBalance">Leave Balance</label>
+            <input type="number" name="leaveBalance" value="<%= employee.leaveBalance %>" required>
+
+            <label for="performanceNotes">Performance Reviews/Notes</label>
+            <textarea name="performanceNotes"><%= employee.performanceNotes %></textarea>
+         
+
+            <label for="education">Education Qualifications</label>
+            <textarea name="education"><%= employee.education %></textarea>
+
+            <label for="experience">Experience (years in the role)</label>
+            <input type="number" name="experience" value="<%= employee.experience %>" required>
+
+            <label for="employeeStatus">Employee Status</label>
+            <select name="employeeStatus" required>
+                <option value="Active" <%= employee.employeeStatus === 'Active' ? 'selected' : '' %>>Active</option>
+                <option value="On Leave" <%= employee.employeeStatus === 'On Leave' ? 'selected' : '' %>>On Leave</option>
+                <option value="Resigned" <%= employee.employeeStatus === 'Resigned' ? 'selected' : '' %>>Resigned</option>
+            </select>
+
+            <label for="picture">Profile Picture</label>
+            <input type="file" name="picture" accept="image/*">
+
+            
+            <button type="submit" class="btn btn-primary">Update Employee</button>
+        </form>
+    </main>
+    </div>
+<!-- Include Footer -->
+<%- include('../partials/footer') %>
+</body>
+</html>
+
+                

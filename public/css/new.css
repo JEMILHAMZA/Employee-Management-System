@@ -1,0 +1,80 @@
+/* Header Styling */
+header {
+   
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1001; /* Ensure it's above the sidebar */
+}
+
+/* Sidebar Styling */
+.sidebar {
+  
+    color: white;
+    padding: 15px;
+    width: 200px;
+    position: fixed;
+    top: 100px; /* Match this to header height */
+    bottom: 0;
+    left: 0;
+    height: calc(100vh - 60px); /* Ensures it fits between header and footer */
+    overflow: auto;
+    z-index: 1000; /* Keeps it under the header but above main content */
+}
+
+/* Main Content Styling */
+.profile-content {
+    margin-left: 300px; /* Adjust based on sidebar width */
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 80px; /* Ensure it starts below the header */
+    
+    overflow-y: auto;
+    min-height: calc(100vh - 80px); /* Ensure content area fills the available height */
+}
+
+/* Footer Styling */
+footer {
+   
+    z-index: 1001; /* Ensure it's above the sidebar */
+}
+
+
+
+
+
+
+
+/* Styling for the Welcome text */
+h1 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+
+
+
+
+
+  button[type="submit"] {
+    /* width: 100%; */
+    height: 2.5em;
+    /* background-color: #333; */
+    color: #fff;
+    padding: 0.5em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #444;
+  }
+

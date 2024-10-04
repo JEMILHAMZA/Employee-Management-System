@@ -1,0 +1,346 @@
+/* css/profileEmp */
+
+/* Sidebar Styling */
+.sidebar {
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    overflow: auto;
+}
+
+ h1 {
+    margin-left: 320px;
+}
+
+
+.sidebar li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+
+.sidebar li a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.sidebar li a:hover {
+    background-color: #575757;
+}
+
+/* Main Content Styling */
+.profile-content {
+    margin-left: 220px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin-top: 20px;
+}
+
+
+
+/* Form Styling */
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button[type="submit"]:hover {
+    background-color: #444;
+}
+
+/* Profile Picture Styling */
+img {
+    display: block;
+    margin-bottom: 15px;
+    border-radius: 50%;
+}
+
+.default-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: #004d99;
+    color: white;
+    font-size: 72px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .profile-content {
+        margin-left: 0;
+    }
+
+    header {
+        padding: 15px;
+    }
+
+    .sidebar li {
+        display: inline-block;
+        margin-right: 10px;
+    }
+
+    .sidebar li a {
+        padding: 8px 12px;
+    }
+}
+
+
+
+
+/* Main Profile Picture Styling */
+.profile-content .sidebar-profile-pic {
+    width: 30px;
+    height: 30px;
+  
+    margin-bottom: 0px;
+  
+}
+
+
+
+
+
+
+
+
+
+.default-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 150px;
+    background-color: #004d99;
+    color: white;
+    font-size: 72px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+
+#export-data {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
+
+/* Sidebar Profile Picture Styling */
+.sidebar-profile-pic {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px; /* Adjust the size to your preference */
+    height: 25px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+
+
+/* Sidebar Default Avatar Styling */
+.sidebar-default-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 25px; /* Adjust the size to match the reduced profile pic */
+    height: 25px;
+    /* background-color: #004d99; */
+    color: white;
+    font-size: 24px; /* Adjust font size for smaller avatar */
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General content styling for profile area */
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 80%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-content h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
+}
+
+/* Styling the form elements */
+form div {
+    margin-bottom: 15px;
+}
+
+form label {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+form input[type="date"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+form button[type="submit"],
+form button[disabled],
+.btn {
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 20px;
+    width: 100%;
+}
+
+form button[disabled] {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+form .btn {
+    background-color: #28a745;
+    text-decoration: none;
+}
+
+form .btn:hover {
+    background-color: #218838;
+}
+
+.alert {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.alert-success {
+    
+    color: green;
+}
+
+.alert-danger {
+ 
+    color:red;
+}
+
+
+
+.profile-content .sidebar a.button {
+    display: flex;
+    align-items: center; /* Align items (image and text) side by side */
+    
+}
+
+
+
+
+
+
+
+
+
+
+

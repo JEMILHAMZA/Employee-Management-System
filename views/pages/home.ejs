@@ -1,0 +1,37 @@
+<!-- pages/home.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/register.css">
+</head>
+<body>
+    <!-- Include Header -->
+    <%- include('../partials/header') %>
+
+    <section class="hero">
+        <div class="login-area">
+            <h2>Login</h2>
+            <% if (error) { %>
+                <p class="error-message"><%= error %></p>
+            <% } %>
+            <form action="/login" method="POST">
+                <label for="email">Email</label>
+                <input type="email" name="email" required>
+                
+                <label for="password">Password</label>
+                <input type="password" name="password" required>
+                
+                <button type="submit">Login</button>
+            </form>
+            <a href="/admin/register">Register as Admin</a>
+        </div>
+    </section>
+    
+    <!-- Include Footer -->
+    <%- include('../partials/footer') %>
+</body>
+</html>

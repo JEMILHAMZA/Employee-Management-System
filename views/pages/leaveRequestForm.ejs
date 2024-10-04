@@ -1,0 +1,97 @@
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee Management System</title>
+        <!-- <link rel="stylesheet" href="/css/dashboard.css"> -->
+          <link rel="stylesheet" href="/css/profileEmp.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <link rel="stylesheet" href="/css/home.css">
+        <link rel="stylesheet" href="/css/new.css">
+        
+        
+        
+    </head>
+    <body>
+    
+       
+        <!-- Include Header -->
+        <%- include('../partials/header') %>
+        <h1>Welcome, <%= employee.fullName %></h1>
+        
+        <main class="profile-content" id="profile-content">
+                <!-- Sidebar -->
+        <%- include('../partials/empSidebar.ejs') %>
+
+ <!-- pages/leaveRequestForm.ejs -->
+ <h2>Leave Request</h2>
+<form action="/employees/leave-request" method="POST">
+    <% if (success_msg) { %>
+        <div class="alert alert-success"><%= success_msg %></div>
+    <% } %>
+    
+    <% if (error_msg) { %>
+        <div class="alert alert-danger"><%= error_msg %></div>
+    <% } %>
+    
+    <% if (!leaveRequest) { %>
+        <div class="form-group">
+            <label for="leaveType">Leave Type:</label>
+            <select name="leaveType" required>
+                <option value="Sick Leave">Sick Leave</option>
+                <option value="Casual Leave">Casual Leave</option>
+                <option value="Annual Leave">Annual Leave</option>
+                <option value="Maternity Leave">Maternity Leave</option>
+                <option value="Paternity Leave">Paternity Leave</option>
+                <option value="Others">Others</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="startDate">Start Date:</label>
+            <input type="date" name="startDate" required>
+        </div>
+        <div class="form-group">
+            <label for="endDate">End Date:</label>
+            <input type="date" name="endDate" required>
+        </div>
+        <div class="form-group">
+            <label for="reason">Reason:</label>
+            <textarea name="reason" required></textarea>
+        </div>
+        <button type="submit">Submit Request</button>
+    <% } else { %>
+        <div class="form-group">
+            <p>Your leave request is currently <strong><%= leaveRequest.status %></strong>.</p>
+            <% if (leaveRequest.status === 'Pending') { %>
+                <button type="button" disabled>Pending</button>
+            <% } else if (leaveRequest.status === 'Approved') { %>
+                <button type="button" disabled>Approved</button>
+            <% } else if (leaveRequest.status === 'Rejected') { %>
+                <button type="button" disabled>Rejected</button>
+            <% } %>
+        </div>
+        <!-- Button triggering a GET request to refresh the form -->
+<a href="/employees/leave-request/refresh" class="btn btn-primary">Refresh for New Request</a>
+
+    <% } %>
+</form>
+
+
+<!-- Include Footer -->
+ </main>
+<%- include('../partials/footer') %>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+

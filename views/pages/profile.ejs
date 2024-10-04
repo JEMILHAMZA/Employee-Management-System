@@ -1,0 +1,62 @@
+
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Employee Management System</title>
+        
+        <link rel="stylesheet" href="/css/profile.css">
+        <link rel="stylesheet" href="/css/profile2.css">
+        <link rel="stylesheet" href="/css/home.css">
+        
+        
+    </head>
+    <body>
+    
+       
+        <!-- Include Header -->
+        <%- include('../partials/header') %>
+    
+    <div class="profile-container">
+        
+        <%- include('../partials/adminSidebar.ejs') %>
+       
+        <main class="profile-content">
+            <h2>Profile Details</h2>
+            <form action="/admin/profile" method="POST" enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="profilePicture">Profile Picture:</label>
+                    <input type="file" name="profilePicture" id="profilePicture">
+                    <div class="profile-pic-container">
+                        <% if (user.profilePicture) { %>
+                            <img src="<%= user.profilePicture %>" alt="Profile Picture" class="profile-pic">
+                        <% } else { %>
+                            <div class="profile-pic default-avatar"><%= user.name.charAt(0).toUpperCase() %></div>
+                        <% } %>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" value="<%= user.name %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" value="<%= user.email %>" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">New Password:</label>
+                    <input type="password" name="password" id="password">
+                </div>
+                <button type="submit">Update Profile</button>
+            </form>
+        </main>
+   
+    </div>
+<!-- Include Footer -->
+<%- include('../partials/footer') %>
+</body>
+</html>
+
+

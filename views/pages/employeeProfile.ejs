@@ -1,0 +1,75 @@
+
+    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+    <!-- <link rel="stylesheet" href="/css/dashboard.css"> -->
+      <link rel="stylesheet" href="/css/profileEmp.css">
+      
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/new.css">
+
+ 
+</head>
+<body>
+
+    
+    <!-- Include Header -->
+    <%- include('../partials/header') %>
+    
+        <h1>Welcome, <%= employee.fullName %></h1>
+         <h1 style="font-size: 2em; font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;color: #333;margin-top: 40px ; margin-bottom: 0;">Welcome, <%= employee.fullName %></h1>
+    
+    <main class="profile-content" id="profile-content">
+            <!-- Sidebar -->
+    <%- include('../partials/empSidebar.ejs') %>
+    
+        <h2>Employee Details</h2>
+        <% if (employee.picture) { %>
+            <img src="<%= employee.picture %>" alt="Employee Picture" style="width: 150px;">
+        <% } else { %>
+            <div class="profile-pic default-avatar"><%= employee.fullName.charAt(0).toUpperCase() %></div>
+        <% } %>
+        <p class="fullName"><strong><%= employee.fullName %></strong> </p>
+        <p><strong>Sex:</strong> <%= employee.gender %></p>
+        <p><strong>Employee ID:</strong> <%= employee.employeeID %></p>
+        <p><strong>Role:</strong> <%= employee.role %></p>
+        <p><strong>Email:</strong> <%= employee.email %></p>
+        <p><strong>Phone Number:</strong> <%= employee.phoneNumber %></p>
+        <p><strong>Job Title:</strong> <%= employee.jobTitle %></p>
+        <p><strong>Department:</strong> <%= employee.department %></p>
+        <p><strong>Supervisor:</strong> <%= employee.supervisor %></p>
+        <p><strong>Date of Birth:</strong> <%= employee.dob.toDateString() %></p>
+        <p><strong>Address:</strong> <%= employee.address %></p>
+        <p><strong>Employment Type:</strong> <%= employee.employmentType %></p>
+        <p><strong>Salary:</strong> $<%= employee.salary %></p>
+        <p><strong>Work Location:</strong> <%= employee.workLocation %></p>
+        <p><strong>Emergency Contact:</strong> <%= employee.emergencyContact %></p>
+        <p><strong>Joining Date:</strong> <%= employee.joiningDate.toDateString() %></p>
+        <% if (employee.endDate) { %>
+            <p><strong>End Date:</strong> <%= employee.endDate.toDateString() %></p>
+        <% } %>
+        <p><strong>Leave Balance:</strong> <%= employee.leaveBalance %> days</p>
+        <p><strong>Performance Notes:</strong> <%= employee.performanceNotes || 'N/A' %></p>
+        <p><strong>Education:</strong> <%= employee.education %></p>
+        <p><strong>Experience:</strong> <%= employee.experience %> years</p>
+        <p><strong>Employee Status:</strong> <%= employee.employeeStatus %></p>
+    </main>
+
+    <!-- Export Data Button -->
+    <button id="export-data"  onclick="exportData()">Export data as PDF</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="/scripts/jspdf.umd.min.js"></script>
+    <script src="/scripts/employeeProfile.js"></script>
+<!-- Include Footer -->
+<%- include('../partials/footer') %>
+</body>
+</html>
+

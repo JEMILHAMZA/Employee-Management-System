@@ -1,0 +1,19 @@
+<aside class="sidebar">
+    <h3>Admin Actions</h3>
+     <li><a href="/admin/dashboard" class="button">Home</a></li>
+    <li><a href="/admin/add-employee" class="button">Add New Employee</a></li> 
+    <li><a href="/admin/manage-employees" class="button">Manage Employees</a></li>
+    <li><a href="/admin/leave-requests" class="button">Pending Leave Requests</a></li>
+    <li>
+        <a href="/admin/profile" class="button">
+            <% if (user.profilePicture) { %>
+                <img src="<%= user.profilePicture %>" alt="Profile Picture" class="profile-pic-small">
+            <% } else { %>
+                <div class="profile-pic default-avatar-small"><%= user.name.charAt(0).toUpperCase() %></div>
+            <% } %>
+            Profile
+        </a>
+    </li>
+    <li><a href="/logout" class="button">Logout</a></li>
+</aside>
+

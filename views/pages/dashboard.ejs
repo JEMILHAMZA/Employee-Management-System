@@ -1,0 +1,91 @@
+<!-- pages/dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Management System</title>
+<!--     
+    <link rel="stylesheet" href="/css/profile.css"> -->
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    
+    
+</head>
+<body>
+
+   
+    <!-- Include Header -->
+    <%- include('../partials/header') %>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <%- include('../partials/adminSidebar.ejs') %>
+        
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <h2>Welcome, <%= user.name %></h2>
+
+           <!-- Summary Statistics -->
+<h3 class="topic">Summary Statistics</h3>
+<section class="summary-statistics">
+    <div class="stat-item">
+        <div class="stat-circle total-employees"><%= totalEmployees %></div>
+        <div class="stat-text">Total Number of Employees</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-circle active-employees"><%= activeEmployees %></div>
+        <div class="stat-text">Active Employees</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-circle employees-on-leave"><%= employeesOnLeave %></div>
+        <div class="stat-text">Employees on Leave</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-circle resigned-employees"><%= resignedEmployees %></div>
+        <div class="stat-text">Resigned Employees</div>
+    </div>
+    <div class="stat-item">
+        <div class="stat-circle new-hires"><%= newHiresThisMonth %></div>
+        <div class="stat-text">New Hires This Month</div>
+    </div>
+</section>
+
+
+
+
+            <!-- Graphical Representations -->
+            <h3 class="topic">Graphical Representations</h3>
+            <section class="graphical-representations">
+                
+                <canvas id="employee-distribution-chart"></canvas>
+                <canvas id="employee-status-chart"></canvas>
+                <canvas id="gender-diversity-chart"></canvas>
+                <canvas id="employment-type-chart"></canvas>
+            </section>
+        </main>
+    </div>
+   
+   
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        const employeeDistributionData = JSON.parse('<%- JSON.stringify(employeeDistribution) %>');
+        const employeeStatusData = JSON.parse('<%- JSON.stringify(employeeStatusDistribution) %>');
+        const genderDiversityData = JSON.parse('<%- JSON.stringify(genderDiversity) %>');
+        const employmentTypeData = JSON.parse('<%- JSON.stringify(employmentTypeDistribution) %>');
+    </script>
+    <script src="/scripts/dashboard.js"></script>
+    
+    
+<!-- Include Footer -->
+<%- include('../partials/footer') %>
+</body>
+</html>
+
+
+
+
+
+
+
+
